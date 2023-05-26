@@ -3,6 +3,8 @@ const cors = require('cors');
 const path = require('path');
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
 app.use(cors(
   {
     origin: 'https://theknobstudio.vercel.app',
@@ -15,6 +17,10 @@ app.use('/assets/audio', express.static(path.join(__dirname, '../public/assets/a
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
 
 module.exports = app;
