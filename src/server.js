@@ -5,7 +5,7 @@ const app = express();
 
 app.use(cors(
   {
-    origin: 'https://theknobstudio.vercel.app/',
+    origin: 'https://theknobstudio.vercel.app',
     optionsSuccessStatus: 200
   }
 ));
@@ -13,6 +13,4 @@ app.use(cors(
 app.use('/assets/img', express.static(path.join(__dirname, '../public/assets/img')));
 app.use('/assets/audio', express.static(path.join(__dirname, '../public/assets/audio')));
 
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
-})
+module.exports = app;
