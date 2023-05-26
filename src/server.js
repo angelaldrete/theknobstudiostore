@@ -13,4 +13,8 @@ app.use(cors(
 app.use('/assets/img', express.static(path.join(__dirname, '../public/assets/img')));
 app.use('/assets/audio', express.static(path.join(__dirname, '../public/assets/audio')));
 
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
 module.exports = app;
