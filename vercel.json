@@ -8,8 +8,20 @@
   ],
   "routes": [
     {
+      "src": "/assets/img/(.*)",
+      "dest": "/public/assets/img/$1"
+    },
+    {
+      "src": "/assets/audio/(.*)",
+      "dest": "/public/assets/audio/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "/src/index.js"
+    },
+    {
+      "src": "/",
+      "dest": "/public/index.html"
     }
   ]
 }
